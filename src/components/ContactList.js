@@ -1,12 +1,17 @@
-import React from 'react';
-import ContactItem from './ContactItem';
+import React from "react";
+import ContactItem from "./ContactItem";
 
 function ContactList(props) {
-  const { contacts } = props;
+  const { contacts, onDelete } = props;
   return (
     <div className="contact-list">
       {contacts.map((contact) => (
-        <ContactItem key={contact.id} {...contact} />
+        <ContactItem
+          key={contact.id}
+          id={contact.id}
+          onDelete={onDelete}
+          {...contact}
+        />
       ))}
     </div>
   );
